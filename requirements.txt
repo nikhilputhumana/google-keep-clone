@@ -19,7 +19,7 @@ pygame==2.1.2
 PyQt5==5.15.7
 PyQt5-Qt5==5.15.2
 PyQt5-sip==12.11.0
-pywin32==304
+pywin32==305
 Send2Trash==1.8.0
 sqlparse==0.4.2
 tornado==5.1.1
