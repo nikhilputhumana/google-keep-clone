@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Keep</title>
+{% endblock %}
+
+{% block body %}
+<nav>
+    <div class="shadow p-3 mb-5 bg-body rounded row">
+        <div class="col-md-2">
+            <svg class="ms-2" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+            </svg>
+            <img class="logo-img ms-3" src="https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png"
+                alt="keep-logo">
+            <b class="logo-name">Keep </b>
+        </div>
+
+        <div class="col-md-9">
+            <input class="rounded form-control ms-5 search-box" aria-label="Search" autocomplete="off" placeholder="Search" role="combobox" value="" name="q" type="text">
+        </div>
+        
+        <div class="col-md-1">
+            <button class="btn btn-primary" type="menu">Log out</button>
+        </div>
+    </div>
+</nav>
+
+<div class="items ms-5 me-5">
+    {% if tasks|length < 1 %}
+    <h4 style="text-align: center">There are no tasks. Create one below!</h4>
+    
+    {% else %}    
+        
+        {% for task in tasks %}
+            <div class="item1 mb-3">
+                <div class="m-4">
+                    <!-- <h4>{{ task.heading }}</h4> --> 
+                    <p>{{ task.content }}</p>
+                    <p>{{ task.date_created.date() }}</p>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{task.id}}">Update</a>
+                </div>
+            </div>            
+        {% endfor %}
+
+    {% endif %}
+
+    <div class="form">
+        <form action="/" method="POST">
+            <!-- <input type="text" name="cont-head" id="cont-head"> -->
+            <input type="text" name="content" id="content" placeholder="Enter the note..">
+            <input type="submit" value="Add Task">
+        </form>
+    </div>
+</div>
+{% endblock %}
