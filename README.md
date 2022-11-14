@@ -2,6 +2,8 @@
 
 This repository contains the clone of the Google Keep websites with some limited functionalities similar to the original site made using flask.
 
+View the working [here](https://drive.google.com/file/d/1Yx7nPVmpyOuvPUhRcCGBZ-S9Pa7ukkzF/view?usp=sharing)
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install the required dependencies
